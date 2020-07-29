@@ -1,0 +1,97 @@
+{
+  "name": "sftriggers",
+  "description": "set triggers on/off",
+  "version": "1.0.0",
+  "author": "oscar scholten",
+  "bugs": "https://github.com/bjanderson70/sftriggers/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/errors": "^1",
+    "@salesforce/command": "^3.0.1",
+    "@types/fs-extra": "^9.0.1",
+    "@types/recursive-readdir": "^2.2.0",
+    "fs-extra": "^9.0.1",
+    "recursive-readdir": "^2.2.2",
+    "replace-in-file": "^6.1.0",
+    "@salesforce/core": "^2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/plugin-help": "^2",
+    "@oclif/test": "^1",
+    "@salesforce/dev-config": "1.4.1",
+    "@types/chai": "^4",
+    "@types/mocha": "^8",
+    "@types/node": "^14",
+    "chai": "^4",
+    "globby": "^11",
+    "mocha": "^5",
+    "nyc": "^14",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "sinon": "9",
+    "tslint": "^5",
+    "eslint": "^7.5.0",
+    "typescript": "3.9",
+    "husky": ">=1",
+    "jest": "^24.3.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    ".oclif.manifest.json",
+    "package-lock.json",
+    "/lib",
+    "/messages",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/bjanderson70/sftriggers",
+  "keywords": [
+    "sfdx-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "commands": "./lib/commands",
+    "topics": {
+      "org": {
+          "description": "set trigger status active or inactive"
+      }
+    },
+    "bin": "sfdx",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "bjanderson70/sftriggers",
+  "scripts": {
+    "lint": "tslint --project . --config tslint.json --format stylish",
+    "postpack": "rimraf oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "yarn run prepare && jest --runInBand",
+    "test:clean": "rimraf testProject*",
+    "test:local": "LOCALONLY='true' yarn run prepare && jest --runInBand",
+    "test:parallel": "yarn run prepare && jest",
+    "test:watch": "yarn run prepare && jest --watch --runInBand",
+    "version": "oclif-dev readme && git add README.md",
+    "build": "rimraf lib && tsc",
+    "prepare": "yarn run build && oclif-dev manifest && yarn test:clean"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,css,json,md}": [
+        "prettier --write",
+        "git add"
+    ]
+}
+}
