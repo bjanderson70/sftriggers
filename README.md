@@ -4,16 +4,16 @@ sftriggers
 set triggers on/off
 
 # Make Triggers in the Org Active
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s Active
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s A
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s true
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s 1
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s Active
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s A
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s true
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s 1
 
 # Make Triggers in the Org Inactive
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s Inactive
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s I
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s false
-$  sfdx org:setTriggerStatus --targetusername <target-org-username> -s 0
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s Inactive
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s I
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s false
+- $  sfdx org:setTriggerStatus --targetusername <target-org-username> -s 0
 
 [![Version](https://img.shields.io/npm/v/sftriggers.svg)](https://npmjs.org/package/sftriggers)
 [![CircleCI](https://circleci.com/gh/bjanderson70/sftriggers/tree/master.svg?style=shield)](https://circleci.com/gh/bjanderson70/sftriggers/tree/master)
