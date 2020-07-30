@@ -1,8 +1,28 @@
 sftriggers
 ==========
 
-set triggers on/off
+set triggers on/off in a Salesforce Org
 
+# Install
+```
+sfdx plugins:install https://github.com/bjanderson70/sftriggers
+```
+
+# Validate
+To ensure the plugin is installed
+```
+sfdx plugins
+sftriggers 1.0.0
+:
+```
+```
+sfdx org -h (see below)
+USAGE
+  $ sfdx org:COMMAND
+
+COMMANDS
+  org:setTriggerStatus  Set status of all triggers to Active or Inactive
+```
 # Make Triggers in the Org Active
 - $  sfdx org:setTriggerStatus --targetusername \<target-org-username\> -s Active
 - $  sfdx org:setTriggerStatus --targetusername \<target-org-username\> -s A
